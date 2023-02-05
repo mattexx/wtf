@@ -11,12 +11,12 @@ it's kind of like a file browser, except it doesn't browse
    - Guidelines
      - kebab-case-file-names
 2. `docker build . -t wtf`
-3. `docker run -v "$(pwd)/img:/app/img/:ro" -p 8080:8080 wtf`
-4. [http://localhost:8080/darkside](http://localhost:8080/darkside)
+3. `docker run -v "$(pwd)/img:/app/img/:ro" -p 80:80 wtf`
+4. [http://localhost/darkside](http://localhost/darkside)
 
 ## run
 
-`docker run -d --restart=unless-stopped --name wtf -v "$(pwd)/img:/app/img/:ro" -p 8080:8080 wtf`
+`docker run -d --restart=unless-stopped --name wtf -v "$(pwd)/img:/app/img/:ro" -p 80:80 wtf`
 
 ## demo
 
