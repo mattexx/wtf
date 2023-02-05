@@ -12,9 +12,9 @@ import (
 var slugs = make(map[string]string)
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    // handle root
+    // TODO sep handlers
     if len(r.URL.Path) <= 1 {
-        // fmt.Fprintf(w, "Hi there, I love you!")
+        // handle root
         buf, err := ioutil.ReadFile("img/darkside.jpeg")
         if err != nil {
             log.Fatal(err)
@@ -22,6 +22,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
         w.Header().Set("Content-Type", "image/jpeg")
         w.Write(buf)
     } else {
+        // handle slugs
         slug := r.URL.Path[1:]
         ext, ok := slugs[slug]
         if ok {
@@ -32,6 +33,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
             w.Header().Set("Content-Type", "image/"+ext)
             w.Write(buf)
         } else {
+            // 404 redirect to root
             http.Redirect(w, r, "/", http.StatusFound)
         }
     }
