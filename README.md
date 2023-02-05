@@ -12,4 +12,4 @@ it's kind of like a file browser, except it doesn't browse
      - kebab-case-file-names
 2. `docker build . -t wtf`
 3. `docker run -v "$(pwd)/img:/app/img/:ro" -p 8080:8080 wtf`
-4. [http://localhost:8080/darkside]
+4. (http://localhost:8080/darkside)[http://localhost:8080/darkside]
